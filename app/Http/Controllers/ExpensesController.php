@@ -38,7 +38,6 @@ class ExpensesController extends Controller
     public function store(Request $request)
     {
         $sales = $request->validate([
-            'date' => 'required',
             'reason' => 'required|string',
             'amount' => 'required',
         ]);

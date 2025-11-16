@@ -18,7 +18,32 @@ class SalesController extends Controller
         $expenses = Expenses::all();
         $user = User::all();
 
-        return view('dashboard', compact('sales', 'expenses', 'user'));
+        [$labels, $data] = $this->getSalesYtd();
+
+        return view('dashboard', compact('sales', 'expenses', 'user', 'labels', 'data'));
+    }
+
+    private function getSalesYtd(): array
+    {
+        $currentYear = now()->year;
+        $currentMonth = now()->month;
+
+        $raw = Sales::selectRaw("strftime('%m', created_at) as month, SUM(amount) as total")
+            ->whereYear('created_at', $currentYear)
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get()
+            ->pluck('total', 'month')
+            ->mapWithKeys(fn($value, $key) => [(int)$key => $value]); // convert month string to integer
+
+        $labels = [];
+        $data = [];
+        for ($m = 1; $m <= $currentMonth; $m++) {
+            $labels[] = now()->create($currentYear, $m, 1)->format('M');
+            $data[] = $raw[$m] ?? 0;
+        }
+
+        return [$labels, $data];
     }
 
     /**
@@ -38,7 +63,6 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         $sales = $request->validate([
-            'date' => 'required',
             'amount' => 'required',
         ]);
 

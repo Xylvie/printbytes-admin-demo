@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
             $table->integer('amount')->nullable();
             $table->timestamps();
         });

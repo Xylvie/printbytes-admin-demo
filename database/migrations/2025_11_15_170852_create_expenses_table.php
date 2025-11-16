@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
             $table->string('reason');
             $table->integer('amount');
             $table->timestamps();
