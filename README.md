@@ -19,4 +19,7 @@ Log in to the dashboard to manage sales and expenses
 
 View charts to track business performance
 
-Visit Site here -> https://printbytes-demo.jneri.site/register
+Visit Site here -> https://printbytes-demo.jneri.site
+
+
+<img width="1541" height="989" alt="127 0 0 1_8000_dashboard" src="https://github.com/user-attachments/assets/4852dd67-0b95-4226-ac9b-e369c0938196" />
