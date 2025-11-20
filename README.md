@@ -21,6 +21,9 @@ View charts to track business performance
 
 Visit Site here -> https://printbytes-demo.jneri.site
 
+**IN Production Video**
+
+https://www.loom.com/share/e670d713afc44bf28acaeddb2ad3d85f
 
 <img width="1541" height="989" alt="127 0 0 1_8000_dashboard" src="https://github.com/user-attachments/assets/4852dd67-0b95-4226-ac9b-e369c0938196" />
 <img width="1541" height="989" alt="127 0 0 1_8000_dashboard_partition" src="https://github.com/user-attachments/assets/ea69b7f3-cec7-4132-82c9-bff1612d7bd7" />
